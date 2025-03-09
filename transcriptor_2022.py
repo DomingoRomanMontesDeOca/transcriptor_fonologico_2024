@@ -44,7 +44,7 @@ def menu_fonemas():
     print("==============================")
     print("\t1. Transcripción fonológica")
     print("")
-    print("\t2. Recuento de fonemas")
+    print("\t2. Recuento total de fonemas")
     print("")
     print("\t3. Gráficos de ocurrencias de fonemas")
     print("==============================")
@@ -570,6 +570,8 @@ def recuento_fonemas(transcripcion_4):
     # Se entrega la lista ordenada
     # de ocurrencias de cada caso
 
+
+
     ene_a = (transcripcion_4.count("a")) + (transcripcion_4.count("A"))
     ene_b = transcripcion_4.count("b")
     ene_ch = transcripcion_4.count("∫")  # che
@@ -598,6 +600,71 @@ def recuento_fonemas(transcripcion_4):
     ene_D = transcripcion_4.count("D")
     ene_G = transcripcion_4.count("G")
 
+
+# Se agrega contador de fonemas y archifonemas diferentes.
+    contador_total_fonemas_diferentes = 0
+    contador_total_archifonemas_diferentes = 0
+
+    if ene_a > 0:
+        contador_total_fonemas_diferentes = contador_total_fonemas_diferentes + 1
+    if ene_b > 0:
+        contador_total_fonemas_diferentes = contador_total_fonemas_diferentes + 1
+    if ene_ch > 0:
+        contador_total_fonemas_diferentes = contador_total_fonemas_diferentes + 1
+    if ene_d > 0:
+        contador_total_fonemas_diferentes = contador_total_fonemas_diferentes + 1
+    if ene_e > 0:
+        contador_total_fonemas_diferentes = contador_total_fonemas_diferentes + 1
+    if ene_f > 0:
+        contador_total_fonemas_diferentes = contador_total_fonemas_diferentes + 1
+    if ene_g > 0:
+        contador_total_fonemas_diferentes = contador_total_fonemas_diferentes + 1
+    if ene_i > 0:
+        contador_total_fonemas_diferentes = contador_total_fonemas_diferentes + 1
+    if ene_x > 0:
+        contador_total_fonemas_diferentes = contador_total_fonemas_diferentes + 1
+    if ene_k > 0:
+        contador_total_fonemas_diferentes = contador_total_fonemas_diferentes + 1
+    if ene_l > 0:
+        contador_total_fonemas_diferentes = contador_total_fonemas_diferentes + 1
+    if ene_y > 0:
+        contador_total_fonemas_diferentes = contador_total_fonemas_diferentes + 1
+    if ene_m > 0:
+        contador_total_fonemas_diferentes = contador_total_fonemas_diferentes + 1
+    if ene_n > 0:
+        contador_total_fonemas_diferentes = contador_total_fonemas_diferentes + 1
+    if ene_ñ > 0:
+        contador_total_fonemas_diferentes = contador_total_fonemas_diferentes + 1
+    if ene_N > 0:
+        contador_total_archifonemas_diferentes = contador_total_archifonemas_diferentes + 1
+    if ene_o > 0:
+        contador_total_fonemas_diferentes = contador_total_fonemas_diferentes + 1
+    if ene_p > 0:
+        contador_total_fonemas_diferentes = contador_total_fonemas_diferentes + 1
+    if ene_r > 0:
+        contador_total_fonemas_diferentes = contador_total_fonemas_diferentes + 1
+    if ene_rr > 0:
+        contador_total_fonemas_diferentes = contador_total_fonemas_diferentes + 1
+    if ene_R > 0:
+        contador_total_archifonemas_diferentes = contador_total_archifonemas_diferentes + 1
+    if ene_s > 0:
+        contador_total_fonemas_diferentes = contador_total_fonemas_diferentes + 1
+    if ene_t > 0:
+        contador_total_fonemas_diferentes = contador_total_fonemas_diferentes + 1
+    if ene_u > 0:
+        contador_total_fonemas_diferentes = contador_total_fonemas_diferentes + 1
+    if ene_B > 0:
+        contador_total_archifonemas_diferentes = contador_total_archifonemas_diferentes + 1
+    if ene_D > 0:
+        contador_total_archifonemas_diferentes = contador_total_archifonemas_diferentes + 1
+
+    print("Total de fonemas diferentes:")
+    print(contador_total_fonemas_diferentes)
+    print("Total de archifonemas diferentes:")
+    print(contador_total_archifonemas_diferentes)
+
+
+
     frecuencia_fonemas = [("a", ene_a), ("b", ene_b), ("ch", ene_ch), ("d", ene_d), ("e", ene_e), ("f", ene_f),
                           ("g", ene_g), ("i", ene_i), ("x", ene_x), ("k", ene_k), ("l", ene_l), ("y", ene_y),
                           ("m", ene_m), ("n", ene_n), ("N", ene_N), ("ñ", ene_ñ), ("o", ene_o), ("p", ene_p),
@@ -608,6 +675,8 @@ def recuento_fonemas(transcripcion_4):
                      ene_i + ene_x + ene_k + ene_l + ene_m + ene_n + ene_ñ + ene_N +
                      ene_y + ene_o + ene_p + ene_r + ene_rr + ene_s + ene_t + ene_u +
                      ene_B + ene_D + ene_G)
+
+
 
     frec_fonemas_dict = dict(frecuencia_fonemas)
     frec_fonemas_orden = sorted(frec_fonemas_dict.items(), key=operator.itemgetter(1), reverse=True)
